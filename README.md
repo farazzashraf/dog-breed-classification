@@ -6,7 +6,12 @@ This project focuses on classifying images of dogs into their respective breeds 
 
 **Dataset**: The model uses a collection of dog images categorized by breed. These images are preprocessed, resized, and augmented to improve model performance.
 
-**Model Architecture**: A CNN is designed with multiple convolutional layers to learn features from images. These layers are followed by pooling layers to reduce dimensions and fully connected layers to make the final breed predictions.
+**Model Architecture**: 
+The model uses **MobileNetV2**, a pre-trained deep learning model from TensorFlow Hub, as a feature extractor. This is followed by a fully connected **softmax layer** for classification.
+
+- **Input Shape**: The model expects input images in the shape `[None, IMG_SIZE, IMG_SIZE, 3]`, where `IMG_SIZE` is set to 224.
+- **Output Shape**: The output corresponds to the number of unique dog breeds in the dataset.
+- **Compilation**: The model is compiled using `CategoricalCrossentropy` for loss and the `Adam` optimizer for training.
 
 **Training**: The model is trained on a labeled dog image dataset using an appropriate loss function and optimizer. Evaluation metrics such as accuracy and loss are used to monitor the training progress.
 
