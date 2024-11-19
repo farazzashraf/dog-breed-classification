@@ -21,7 +21,7 @@ The model uses **MobileNetV2**, a pre-trained deep learning model from TensorFlo
 
 1. **Data Preparation**: The images are resized to a uniform size, and augmentation techniques like rotation and flipping are applied to create a diverse dataset.
    
-2. **Model Architecture**: The CNN consists of several layers to capture important features from the images, followed by fully connected layers to make predictions.
+2. **Model Architecture**: The model uses MobileNetV2 as a pre-trained feature extractor, followed by a dense softmax layer for breed classification.
 
 3. **Training the Model**: The model is trained with labeled images, optimizing for accuracy and minimizing loss over several epochs.
 
